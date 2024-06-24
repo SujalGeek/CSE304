@@ -39,49 +39,64 @@ pythonButton.addEventListener("click", () => {
 })
 
 clearButton.addEventListener("click", () => {
-    javascript = 0;
-    python = 0;
-    java = 0;
+    localStorage.javascript = 0;
+    localStorage.python = 0;
+    localStorage.java = 0;
 
-    javaScore.innerHTML = `Java: ${java}`;
-    javascriptScore.innerHTML = `Javascript: ${javascript}`;
-    pythonScore.innerHTML = `Python: ${python}`;
+    if(localStorage.java){
+      javaScore.innerHTML = `Java: ${localStorage.java}`;
+    }
+    else{
+      javaScore.innerHTML = `Java: 0`;
+    }
+    if(localStorage.javascript){
+      javascriptScore.innerHTML = `Javascript: ${localStorage.javascript}`;
+    }
+    else{
+      javascriptScore.innerHTML = `Javascript: 0`;
+    }
+    if(localStorage.python){
+      pythonScore.innerHTML = `Python: ${localStorage.python}`;
+    }
+    else{
+      pythonScore.innerHTML = `Python: 0`;
+    }
 
 })
 
-if (localStorage.javascript) {
-    localStorage.javascript = Number(localStorage.javascript)+1;
-  } else {
-    localStorage.javascript = 1;
-  }
+// if (localStorage.javascript) {
+//     localStorage.javascript = Number(localStorage.javascript)+1;
+//   } else {
+//     localStorage.javascript = 1;
+//   }
 
 
-document.getElementById("body").onload(() => {
-    javaScore.innerHTML = `Java: ${localStorage.java}`;
-    javascriptScore.innerHTML = `Javascript: ${localStorage.javascript}`;
-    pythonScore.innerHTML = `Python: $localStorage.{python}`;
-})
+// document.getElementById("body").onload(() => {
+//     javaScore.innerHTML = `Java: ${localStorage.java}`;
+//     javascriptScore.innerHTML = `Javascript: ${localStorage.javascript}`;
+//     pythonScore.innerHTML = `Python: $localStorage.{python}`;
+// })
 
 function myFunction() {
     if(localStorage.java)
         {
-            javaScore.innerHTML = `Java: 0`;
+          javaScore.innerHTML = `Java: ${localStorage.java}`;
         }
         else{
-            javaScore.innerHTML = `Java: ${localStorage.java}`;
+          javaScore.innerHTML = `Java: 0`;
         }
         if(localStorage.javascript)
             {
-                javascriptScore.innerHTML = `Javascript: 0`;
+                javascriptScore.innerHTML = `Javascript: ${localStorage.javascript}`;
             }
             else{
-                javascriptScore.innerHTML = `Javascript: ${localStorage.javascript}`;
+              javascriptScore.innerHTML = `Javascript: 0`;
             }
             if(localStorage.python)
                 {
-                    pythonScore.innerHTML = `python: 0`;
+                  pythonScore.innerHTML = `Python: ${localStorage.python}`;
                 }
                 else{
-                    pythonScore.innerHTML = `python: ${localStorage.python}`;
+                    pythonScore.innerHTML = `Python: 0`;
                 }
   }
