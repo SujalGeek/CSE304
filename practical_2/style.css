@@ -1,0 +1,43 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tittle {
+    padding: 3px;
+}
+
+.button {
+    padding: 5px;
+    border-radius: 12px;
+    margin-top: 15px;
+    height: 40px;
+}
+
+.input {
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    height: 30px;
+    width: 250px;
+}
+
+.weather {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: larger;
+}
