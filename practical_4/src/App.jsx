@@ -1,33 +1,60 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+
+  const handleIncrement = () => {
+    setCount((prev) =>  prev + 1);
+  }
+
+  const handleReset = () => {
+    setCount(0);
+  }
+
+  const handleDecrement = () => {
+    setCount((prev) => prev - 1);
+  }
+
+  const handleIncrement5 = () => {
+    setCount((prev) => prev + 5);
+  }
+
+  const handleFirstname = (e) => {
+    let value = e.target.value;
+    console.log(value);
+    setFirstname(value);
+  }
+
+  const handleLastname = (e) => {
+    let value = e.target.value;
+    console.log(value)
+    setLastname(value);
+  }
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>Count: {count}</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div>
+        <button onClick={handleReset}>Reset</button>
+        <button onClick={handleIncrement}>Increment</button>
+        <button onClick={handleDecrement}>Decrement</button>
+        <button onClick={handleIncrement5}>Increment by 5</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div>
+        <h1>Welcome to charusat</h1>
+      </div>
+      <div><input name="firstname" onChange={handleFirstname}/></div>
+      <div><input name="lastname" onChange={handleLastname}/></div>
+      <div>Firstname: {firstname}</div>
+      <div>Lastname: {lastname}</div>
+
     </>
   )
 }
