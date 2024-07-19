@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const currDate = new Date().toLocaleDateString();
+  const currTime = new Date().toLocaleTimeString();
+  const futureDate = new Date(
+    new Date().getTime() + 5 * 24 * 60 * 60 * 1000
+  ).toLocaleDateString();
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  setInterval(() => {
+    setTime(new Date().toLocaleTimeString());
+  }, 1000);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="heading">Welcome to Charusat</div>
+      <div className="content">The date is: {currDate}</div>
+      <div className="content">The time is: {currTime}</div>
+      <div className="content">The date after 5 days will be: {futureDate}</div>
     </div>
   );
 }
